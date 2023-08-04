@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\hoops\\source\\repos\\JUNN30057205\\SatelliteDataProcessing\\SatelliteDataProcessing\\Satellite_DataProcessing.csproj": {}
+    "C:\\Users\\hoops\\source\\repos\\JUNN30057205\\SatelliteDataProcessing\\Satellite_DataProcessing\\Satellite_DataProcessing\\Satellite_DataProcessing.csproj": {}
   },
   "projects": {
-    "C:\\Users\\hoops\\source\\repos\\JUNN30057205\\SatelliteDataProcessing\\SatelliteDataProcessing\\Satellite_DataProcessing.csproj": {
+    "C:\\Users\\hoops\\source\\repos\\JUNN30057205\\SatelliteDataProcessing\\Satellite_DataProcessing\\Satellite_DataProcessing\\Satellite_DataProcessing.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\hoops\\source\\repos\\JUNN30057205\\SatelliteDataProcessing\\SatelliteDataProcessing\\Satellite_DataProcessing.csproj",
+        "projectUniqueName": "C:\\Users\\hoops\\source\\repos\\JUNN30057205\\SatelliteDataProcessing\\Satellite_DataProcessing\\Satellite_DataProcessing\\Satellite_DataProcessing.csproj",
         "projectName": "Satellite_DataProcessing",
-        "projectPath": "C:\\Users\\hoops\\source\\repos\\JUNN30057205\\SatelliteDataProcessing\\SatelliteDataProcessing\\Satellite_DataProcessing.csproj",
+        "projectPath": "C:\\Users\\hoops\\source\\repos\\JUNN30057205\\SatelliteDataProcessing\\Satellite_DataProcessing\\Satellite_DataProcessing\\Satellite_DataProcessing.csproj",
         "packagesPath": "C:\\Users\\hoops\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\hoops\\source\\repos\\JUNN30057205\\SatelliteDataProcessing\\SatelliteDataProcessing\\obj\\",
+        "outputPath": "C:\\Users\\hoops\\source\\repos\\JUNN30057205\\SatelliteDataProcessing\\Satellite_DataProcessing\\Satellite_DataProcessing\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\hoops\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -39,6 +39,12 @@
       "frameworks": {
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
+          "dependencies": {
+            "Extended.Wpf.Toolkit": {
+              "target": "Package",
+              "version": "[4.5.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
