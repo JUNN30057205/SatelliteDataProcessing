@@ -21,27 +21,27 @@
         <Label Content="Mu" HorizontalAlignment="Left" Margin="121,5,0,0" VerticalAlignment="Top"/>
         <ComboBox x:Name="ComboBoxSigma" HorizontalAlignment="Left" Margin="21,31,0,0" VerticalAlignment="Top" Width="80"/>
         <ComboBox x:Name="ComboBoxMu" HorizontalAlignment="Left" Margin="121,31,0,0" VerticalAlignment="Top" Width="80"/>
-        <TextBox HorizontalAlignment="Left" Margin="357,28,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" PreviewTextInput="TextBoxA_PreviewTextInput"/>
-        <TextBox HorizontalAlignment="Left" Margin="646,28,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" PreviewTextInput="TextBoxB_PreviewTextInput"/>
-        <TextBox HorizontalAlignment="Left" Margin="357,70,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" IsReadOnlyCaretVisible="True"/>
-        <TextBox HorizontalAlignment="Left" Margin="646,70,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" IsReadOnlyCaretVisible="True"/>
-        <TextBox HorizontalAlignment="Left" Margin="357,100,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" IsReadOnlyCaretVisible="True"/>
-        <TextBox HorizontalAlignment="Left" Margin="646,100,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" IsReadOnlyCaretVisible="True"/>
-        <TextBox HorizontalAlignment="Left" Margin="357,133,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" IsReadOnlyCaretVisible="True"/>
-        <TextBox HorizontalAlignment="Left" Margin="646,133,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" IsReadOnlyCaretVisible="True"/>
-        <TextBox HorizontalAlignment="Left" Margin="357,168,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" IsReadOnlyCaretVisible="True"/>
-        <TextBox HorizontalAlignment="Left" Margin="646,168,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" IsReadOnlyCaretVisible="True"/>
+        <TextBox x:Name="TextBox_SensorA" HorizontalAlignment="Left" Margin="382,28,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="95" PreviewTextInput="TextBoxA_PreviewTextInput"/>
+        <TextBox x:Name="TextBox_SensorB" HorizontalAlignment="Left" Margin="663,28,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="103" PreviewTextInput="TextBoxB_PreviewTextInput"/>
+        <TextBox x:Name="TextBox_SelectSsA" HorizontalAlignment="Left" Margin="382,70,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="95" IsReadOnlyCaretVisible="True"/>
+        <TextBox x:Name="TextBox_SelectSsB" HorizontalAlignment="Left" Margin="663,70,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="103" IsReadOnlyCaretVisible="True"/>
+        <TextBox x:Name="TextBox_InsertSsA" HorizontalAlignment="Left" Margin="382,100,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="95" IsReadOnlyCaretVisible="True"/>
+        <TextBox x:Name="TextBox_InsertSsB" HorizontalAlignment="Left" Margin="663,100,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="103" IsReadOnlyCaretVisible="True"/>
+        <TextBox HorizontalAlignment="Left" Margin="382,133,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="95" IsReadOnlyCaretVisible="True"/>
+        <TextBox HorizontalAlignment="Left" Margin="663,133,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="103" IsReadOnlyCaretVisible="True"/>
+        <TextBox HorizontalAlignment="Left" Margin="382,168,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="95" IsReadOnlyCaretVisible="True"/>
+        <TextBox HorizontalAlignment="Left" Margin="663,168,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="103" IsReadOnlyCaretVisible="True"/>
         <Button Content="Load Data" HorizontalAlignment="Left" Margin="121,64,0,0" VerticalAlignment="Top" Width="80" Click="ButtonClick_LoadData"/>
-        <Button Content="Selection Sort" HorizontalAlignment="Left" Margin="241,68,0,0" VerticalAlignment="Top" Width="100" Click="ButtonClickA_SelectionSort"/>
-        <Button Content="Selection Sort" HorizontalAlignment="Left" Margin="528,68,0,0" VerticalAlignment="Top" Width="100" Click="ButtonClickB_SelectionSort"/>
-        <Button Content="Insertion Sort" HorizontalAlignment="Left" Margin="241,98,0,0" VerticalAlignment="Top" Width="100" Click="ButtonClickA_InsertionSort"/>
-        <Button Content="Binary Search Iteration" HorizontalAlignment="Left" Margin="241,131,0,0" VerticalAlignment="Top" Width="100" Click="ButtonClickA_BinSearchIteration"/>
-        <Button Content="Binary Search Recursion" HorizontalAlignment="Left" Margin="241,166,0,0" VerticalAlignment="Top" Width="100" Click="ButtonClickA_BinSearchRecursive"/>
-        <Button Content="Insertion Sort" HorizontalAlignment="Left" Margin="528,98,0,0" VerticalAlignment="Top" Width="100" Click="ButtonClickB_InsertionSort"/>
-        <Button Content="Binary Search Iteration" HorizontalAlignment="Left" Margin="528,131,0,0" VerticalAlignment="Top" Width="100" Click="ButtonClickB_BinSearchIteration"/>
-        <Button Content="Binary Search Recursion" HorizontalAlignment="Left" Margin="528,166,0,0" VerticalAlignment="Top" Width="100" Click="ButtonClickB_BinSearchRecursive"/>
-        <Label Content="Sensor A" HorizontalAlignment="Left" Margin="241,24,0,0" VerticalAlignment="Top" Width="100"/>
-        <Label Content="Sensor B" HorizontalAlignment="Left" Margin="530,24,0,0" VerticalAlignment="Top" Width="100"/>
+        <Button Content="Selection Sort" HorizontalAlignment="Left" Margin="241,68,0,0" VerticalAlignment="Top" Width="136" Click="ButtonClickA_SelectionSort"/>
+        <Button Content="Selection Sort" HorizontalAlignment="Left" Margin="528,68,0,0" VerticalAlignment="Top" Width="130" Click="ButtonClickB_SelectionSort"/>
+        <Button Content="Insertion Sort" HorizontalAlignment="Left" Margin="241,98,0,0" VerticalAlignment="Top" Width="136" Click="ButtonClickA_InsertionSort"/>
+        <Button Content="Binary Search Iteration" HorizontalAlignment="Left" Margin="241,131,0,0" VerticalAlignment="Top" Width="136" Click="ButtonClickA_BinSearchIteration"/>
+        <Button Content="Binary Search Recursion" HorizontalAlignment="Left" Margin="241,166,0,0" VerticalAlignment="Top" Width="136" Click="ButtonClickA_BinSearchRecursive"/>
+        <Button Content="Insertion Sort" HorizontalAlignment="Left" Margin="528,98,0,0" VerticalAlignment="Top" Width="130" Click="ButtonClickB_InsertionSort"/>
+        <Button Content="Binary Search Iteration" HorizontalAlignment="Left" Margin="528,131,0,0" VerticalAlignment="Top" Width="130" Click="ButtonClickB_BinSearchIteration"/>
+        <Button Content="Binary Search Recursion" HorizontalAlignment="Left" Margin="528,166,0,0" VerticalAlignment="Top" Width="130" Click="ButtonClickB_BinSearchRecursive"/>
+        <Label Content="Sensor A" HorizontalAlignment="Left" Margin="259,24,0,0" VerticalAlignment="Top" Width="100"/>
+        <Label Content="Sensor B" HorizontalAlignment="Left" Margin="548,24,0,0" VerticalAlignment="Top" Width="100"/>
         <ListBox x:Name="ListBoxSensorA" Width="236" Height="197" Margin="241,217,0,20" HorizontalAlignment="Left" VerticalAlignment="Top"/>
         <ListBox x:Name="ListBoxSensorB" HorizontalAlignment="Left" Margin="530,217,0,20" VerticalAlignment="Top" Width="236" Height="197"/>
 

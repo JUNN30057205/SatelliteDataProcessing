@@ -39,7 +39,6 @@ namespace SatelliteDataProcessing
         const double default_Mu = 10;
         const double default_Sigma = 50;
 
-
         //private void IntConsoleTraceListener()
         //{
         //    ConsoleTraceListener listener = new ConsoleTraceListener();
@@ -78,26 +77,12 @@ namespace SatelliteDataProcessing
             {
                 ListView.Items.Add(new
                 {
-                    SensorA = SensorAList.ElementAt(i), //Column SensorA
+                    SensorA = SensorAList.ElementAt(i), //Column SensorA 
                     SensorB = SensorBList.ElementAt(i)  //Column SensorB
                 });
                 
             }
-           
-        
-
-            //LinkedListNode<double> currentNodeA = SensorAList.First;
-            //LinkedListNode<double> currentNodeB = SensorBList.First;
-
-            //while (currentNodeA != null && currentNodeB != null)
-            //{
-            //    ListViewItem listViewItem = new ListViewItem();
-            //    listViewItem.Content = new { SensorA = currentNodeA.Value, SensorB = currentNodeB.Value };
-            //    ListView.Items.Add(listViewItem);
-
-            //    currentNodeA = currentNodeA.Next;
-            //    currentNodeB = currentNodeB.Next;
-            //}
+            
         }
 
         //4.4 Create a button and associated click method that will call the LoadData and ShowAllSensorData methods.
@@ -107,7 +92,7 @@ namespace SatelliteDataProcessing
             LoadData();            
             ShowAllSensorData();
         }
-    
+
         #endregion
         #region Utility Methods
         //4.5	Create a method called “NumberOfNodes” that will return an integer which is the number of nodes(elements) in a LinkedList.
@@ -116,17 +101,23 @@ namespace SatelliteDataProcessing
         // Description: This method returns the number of nodes (elements) in a LinkedList.
         // Input Parameter: linkedList - The LinkedList for which you want to count the nodes.
         // Return Type: int - The number of nodes in the given LinkedList.
-        //private int NumberOfNodes(LinkedList<double> linkedList)
-        //{
-            //int count = 0;
-            //LinkedListNode<double> currentNode = linkedList.First;
-            //while (currentNode != null)
-            //{
-            //    count++;
-            //    currentNode = currentNode.Next;
-            //}
+        private int NumberOfNodes(LinkedList<double> linkedList)
+        {
+            return linkedList.Count;
+        }
 
-            //return count;     
+
+
+        //    int count = 0;
+
+        //    LinkedListNode<double> currentNode = linkedList.First;
+        //    while (currentNode != null)
+        //    {
+        //        count++;
+        //        currentNode = currentNode.Next;
+        //    }
+
+        //    return count;
         //}
 
         //4.6	Create a method called “DisplayListboxData” that will display the content of a LinkedList inside the appropriate ListBox.
@@ -135,9 +126,9 @@ namespace SatelliteDataProcessing
         private void DisplayListboxData(LinkedList<double> linkedList, ListBox listBox)
         {
             listBox.Items.Clear();
-            foreach (var node in linkedList)
+            foreach (double data in linkedList)
             {
-                listBox.Items.Add(node);
+                listBox.Items.Add(data);
             }
 
         }
@@ -147,18 +138,54 @@ namespace SatelliteDataProcessing
         //4.7	Create a method called “SelectionSort” which has a single input parameter of type LinkedList,
         //  while the calling code argument is the linkedlist name. The method code must follow the pseudo code supplied below in the Appendix.
         //  The return type is Boolean.
-        //private bool SelectionSort(LinkedList<double> linkedList)
-        //{
-     
-     //   }
+        private bool SelectionSort(LinkedList<double> linkedList)
+        {
+            int min;
+            int max = NumberOfNodes(linkedList);
+            for(int i = 0; i < max - 1; i++)
+            {
+                min = i;
+                for (int j = i + 1; j < max; j++)
+                {
+                    if (linkedList.ElementAt(j) < (linkedList.ElementAt(min)))
+                    {
+                        min = j;
+                    }
+                }
+                                
+                LinkedListNode<double> currentMin = linkedList.Find(linkedList.ElementAt(min));
+                LinkedListNode<double> currentI = linkedList.Find(linkedList.ElementAt(i));
+                double temp = currentMin.Value;
+                currentMin.Next.Value = currentI.Value;
+                currentI.Value = temp;               
+                
+            }
+            return true;
+            
+        }
 
         //4.8	Create a method called “InsertionSort” which has a single parameter of type LinkedList,
         //  while the calling code argument is the linkedlist name. The method code must follow the pseudo code supplied below in the Appendix.
         //  The return type is Boolean.
-        //private bool InsertionSort(LinkedList<double> linkedList)
-        //{
+        private bool InsertionSort(LinkedList<double> linkedList)
+        {
+            int max = NumberOfNodes(linkedList);
+            for (int i = 0; i < max - 1; i++)
+            {
+                for(int j = i + 1; j > 0; j--)
+                {
+                    if (linkedList.ElementAt(j - 1) > (linkedList.ElementAt(j)))
+                    {
 
-        //}
+                        LinkedListNode<double> current = linkedList.Find(linkedList.ElementAt(j));
+                        double temp = current.Previous.Value;
+                        current.Previous.Value = current.Value;
+                        current.Value = temp; 
+                    }
+                }
+            }
+            return false;
+        }
 
         //4.9	Create a method called “BinarySearchIterative” which has the following four parameters: LinkedList, SearchValue, Minimum and Maximum.
         //  This method will return an integer of the linkedlist element from a successful search or the nearest neighbour value.
@@ -209,25 +236,40 @@ namespace SatelliteDataProcessing
         //  the “ShowAllSensorData” method and “DisplayListboxData” for the appropriate sensor.
         private void ButtonClickA_SelectionSort(object sender, RoutedEventArgs e)
         {
+            TextBox_SelectSsA.Clear();
 
-        }
-
-        private void ButtonClickA_InsertionSort(object sender, RoutedEventArgs e)
-        {
-
+            SelectionSort(SensorAList);
+            DisplayListboxData(SensorAList, ListBoxSensorA);
+            
         }
 
         private void ButtonClickB_SelectionSort(object sender, RoutedEventArgs e)
         {
+            TextBox_SelectSsB.Clear();
 
+            SelectionSort(SensorBList);
+            DisplayListboxData(SensorBList, ListBoxSensorB);
         }
+
+
+        private void ButtonClickA_InsertionSort(object sender, RoutedEventArgs e)
+        {
+            TextBox_InsertSsA.Clear();
+
+            InsertionSort(SensorAList);
+            DisplayListboxData(SensorAList, ListBoxSensorA);
+        }
+
+        
 
         private void ButtonClickB_InsertionSort(object sender, RoutedEventArgs e)
         {
+            TextBox_InsertSsB.Clear();
 
+            InsertionSort(SensorBList);
+            DisplayListboxData(SensorBList, ListBoxSensorB);
         }
-
-
+      
 
         //4.13	Add two numeric input controls for Sigma and Mu. The value for Sigma must be limited with a minimum of 10 and a maximum of 20.
         //  Set the default value to 10. The value for Mu must be limited with a minimum of 35 and a maximum of 75. Set the default value to 50.
