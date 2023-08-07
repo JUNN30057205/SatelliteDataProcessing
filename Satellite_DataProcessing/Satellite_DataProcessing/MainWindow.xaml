@@ -11,8 +11,8 @@
         <ListView x:Name="ListView" Height="314" Margin="21,100,0,0" Width="180" HorizontalAlignment="Left" VerticalAlignment="Top">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Sensor A" Width="90" DisplayMemberBinding="{Binding SensorA}"/>
-                    <GridViewColumn Header="Sensor B" Width="90" DisplayMemberBinding="{Binding SensorB}"/>
+                    <GridViewColumn Header="Sensor A" Width="85" DisplayMemberBinding="{Binding SensorA}"/>
+                    <GridViewColumn Header="Sensor B" Width="85" DisplayMemberBinding="{Binding SensorB}"/>
                 </GridView>
             </ListView.View>
             <ListBox Height="100" Width="100" d:ItemsSource="{d:SampleData ItemCount=5}"/>
@@ -27,19 +27,19 @@
         <TextBox x:Name="TextBox_SelectSsB" HorizontalAlignment="Left" Margin="663,70,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="103" IsReadOnlyCaretVisible="True"/>
         <TextBox x:Name="TextBox_InsertSsA" HorizontalAlignment="Left" Margin="382,100,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="95" IsReadOnlyCaretVisible="True"/>
         <TextBox x:Name="TextBox_InsertSsB" HorizontalAlignment="Left" Margin="663,100,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="103" IsReadOnlyCaretVisible="True"/>
-        <TextBox HorizontalAlignment="Left" Margin="382,133,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="95" IsReadOnlyCaretVisible="True"/>
-        <TextBox HorizontalAlignment="Left" Margin="663,133,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="103" IsReadOnlyCaretVisible="True"/>
-        <TextBox HorizontalAlignment="Left" Margin="382,168,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="95" IsReadOnlyCaretVisible="True"/>
-        <TextBox HorizontalAlignment="Left" Margin="663,168,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="103" IsReadOnlyCaretVisible="True"/>
+        <TextBox x:Name="TextBoxSsA_SearchIte" HorizontalAlignment="Left" Margin="382,133,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="95" IsReadOnlyCaretVisible="True"/>
+        <TextBox x:Name="TextBoxSsB_SearchIte" HorizontalAlignment="Left" Margin="663,133,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="103" IsReadOnlyCaretVisible="True"/>
+        <TextBox x:Name="TextBoxSsA_SearchRec" HorizontalAlignment="Left" Margin="382,168,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="95" IsReadOnlyCaretVisible="True"/>
+        <TextBox x:Name="TextBoxSsB_SearchRec" HorizontalAlignment="Left" Margin="663,168,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="103" IsReadOnlyCaretVisible="True"/>
         <Button Content="Load Data" HorizontalAlignment="Left" Margin="121,64,0,0" VerticalAlignment="Top" Width="80" Click="ButtonClick_LoadData"/>
         <Button Content="Selection Sort" HorizontalAlignment="Left" Margin="241,68,0,0" VerticalAlignment="Top" Width="136" Click="ButtonClickA_SelectionSort"/>
         <Button Content="Selection Sort" HorizontalAlignment="Left" Margin="528,68,0,0" VerticalAlignment="Top" Width="130" Click="ButtonClickB_SelectionSort"/>
         <Button Content="Insertion Sort" HorizontalAlignment="Left" Margin="241,98,0,0" VerticalAlignment="Top" Width="136" Click="ButtonClickA_InsertionSort"/>
-        <Button Content="Binary Search Iteration" HorizontalAlignment="Left" Margin="241,131,0,0" VerticalAlignment="Top" Width="136" Click="ButtonClickA_BinSearchIteration"/>
-        <Button Content="Binary Search Recursion" HorizontalAlignment="Left" Margin="241,166,0,0" VerticalAlignment="Top" Width="136" Click="ButtonClickA_BinSearchRecursive"/>
+        <Button Content="Binary Search Iterative" HorizontalAlignment="Left" Margin="241,131,0,0" VerticalAlignment="Top" Width="136" Click="ButtonClickA_BinSearchIterative"/>
+        <Button Content="Binary Search Recursive" HorizontalAlignment="Left" Margin="241,166,0,0" VerticalAlignment="Top" Width="136" Click="ButtonClickA_BinSearchRecursive"/>
         <Button Content="Insertion Sort" HorizontalAlignment="Left" Margin="528,98,0,0" VerticalAlignment="Top" Width="130" Click="ButtonClickB_InsertionSort"/>
-        <Button Content="Binary Search Iteration" HorizontalAlignment="Left" Margin="528,131,0,0" VerticalAlignment="Top" Width="130" Click="ButtonClickB_BinSearchIteration"/>
-        <Button Content="Binary Search Recursion" HorizontalAlignment="Left" Margin="528,166,0,0" VerticalAlignment="Top" Width="130" Click="ButtonClickB_BinSearchRecursive"/>
+        <Button Content="Binary Search Iterative" HorizontalAlignment="Left" Margin="528,131,0,0" VerticalAlignment="Top" Width="130" Click="ButtonClickB_BinSearchIterative"/>
+        <Button Content="Binary Search Recursive" HorizontalAlignment="Left" Margin="528,166,0,0" VerticalAlignment="Top" Width="130" Click="ButtonClickB_BinSearchRecursive"/>
         <Label Content="Sensor A" HorizontalAlignment="Left" Margin="259,24,0,0" VerticalAlignment="Top" Width="100"/>
         <Label Content="Sensor B" HorizontalAlignment="Left" Margin="548,24,0,0" VerticalAlignment="Top" Width="100"/>
         <ListBox x:Name="ListBoxSensorA" Width="236" Height="197" Margin="241,217,0,20" HorizontalAlignment="Left" VerticalAlignment="Top"/>
