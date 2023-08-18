@@ -41,7 +41,6 @@ namespace SatelliteDataProcessing
             FillComboBoxes();
             TextBlock statusMS = StatusMS;
             statusMS.Text = "Status Message";
-
         }
               
         #region Global Methods 
@@ -324,54 +323,72 @@ namespace SatelliteDataProcessing
         private void ButtonClickA_BinSearchIterative(object sender, RoutedEventArgs e)
         {
             TextBoxSsA_SearchIte.Clear();
-           
+
             if (!string.IsNullOrEmpty(TextBox_SensorA.Text))
-            {                
-                if (SearchRange(TextBox_SensorA, SensorAList) && InsertionSort(SensorAList) || SelectionSort(SensorAList))
+            {
+                //check if searchValue is within the range and data is sorted before search the search value
+                if (SearchRange(TextBox_SensorA, SensorAList))
                 {
-                    Stopwatch sw = new Stopwatch();
-                    sw.Start();
-                    int found = BinarySearchIterative(SensorAList, int.Parse(TextBox_SensorA.Text), 0, NumberOfNodes(SensorAList));
-                    sw.Stop();
-                    long numTickes = sw.ElapsedTicks;
-                    TextBoxSsA_SearchIte.Text = numTickes.ToString() + " ticks";
-                    DisplayListboxData(SensorAList, ListBoxSensorA);
-                    HighlightItems(found, ListBoxSensorA);
-                    Button_BinSearchIterativeA.IsEnabled = false;
+                    if (InsertionSort(SensorAList) || SelectionSort(SensorAList))
+                    {
+                        Stopwatch sw = new Stopwatch();
+                        sw.Start();
+                        int found = BinarySearchIterative(SensorAList, int.Parse(TextBox_SensorA.Text), 0, NumberOfNodes(SensorAList));
+                        sw.Stop();
+                        // This indicates the nubmber os timer ticks that have passed during the time interval when the stopwatch was running
+                        long numTickes = sw.ElapsedTicks;
+                        TextBoxSsA_SearchIte.Text = numTickes.ToString() + " ticks";
+                        DisplayListboxData(SensorAList, ListBoxSensorA);
+                        HighlightItems(found, ListBoxSensorA);
+                        //Disable Button
+                        Button_BinSearchIterativeA.IsEnabled = false;
+                    }
+                    else
+                    {
+                        StatusMS.Text = "SensorA List is Unsorted";
+                    }
                 }
                 else
                 {
-                    StatusMS.Text = "Search Value is out of range or sensorAList is Unsorted";
+                    StatusMS.Text = "SearchValue is out of Range";
+                    TextBox_SensorA.Clear();
                 }
             }
             else
-            {                
-                StatusMS.Text = "Search Input is Empty, Enter the Value"; 
+            {
+                StatusMS.Text = "Search Input is Empty, Enter the Value";
                 TextBox_SensorA.Focus();
-            }     
+            }
         }
-
         private void ButtonClickB_BinSearchIterative(object sender, RoutedEventArgs e)
         {
             TextBoxSsB_SearchIte.Clear();
-            if (!string.IsNullOrEmpty (TextBox_SensorB.Text))
+            if (!string.IsNullOrEmpty(TextBox_SensorB.Text))
             {
-                if (SearchRange(TextBox_SensorB, SensorBList) && SelectionSort(SensorBList) || InsertionSort(SensorBList))
+                //check if searchValue is within the range and data is sorted before search the search value
+                if (SearchRange(TextBox_SensorB, SensorBList))
                 {
-                    Stopwatch sw = new Stopwatch();
-                    sw.Start();
-                    int found = BinarySearchIterative(SensorBList, int.Parse(TextBox_SensorB.Text), 0, NumberOfNodes(SensorBList));
-                    sw.Stop();
-                    long numTickes = sw.ElapsedTicks;
-                    TextBoxSsB_SearchIte.Text = numTickes.ToString() + " ticks";
-                    DisplayListboxData(SensorBList, ListBoxSensorB);
-                    HighlightItems(found, ListBoxSensorB);
-                    Button_BinSearchIterativeB.IsEnabled = false;
-                    
+                    if (InsertionSort(SensorBList) || SelectionSort(SensorBList))
+                    {
+                        Stopwatch sw = new Stopwatch();
+                        sw.Start();
+                        int found = BinarySearchIterative(SensorBList, int.Parse(TextBox_SensorB.Text), 0, NumberOfNodes(SensorBList));
+                        sw.Stop();
+                        long numTickes = sw.ElapsedTicks;
+                        TextBoxSsB_SearchIte.Text = numTickes.ToString() + " ticks";
+                        DisplayListboxData(SensorBList, ListBoxSensorB);
+                        HighlightItems(found, ListBoxSensorB);
+                        Button_BinSearchIterativeB.IsEnabled = false;
+                    }
+                    else
+                    {
+                        StatusMS.Text = "Sensor B List is Unsorted";
+                    }
                 }
                 else
                 {
-                    StatusMS.Text = "Search Value is out of range or sensorBList is Unsorted";
+                    StatusMS.Text = "Search Value is out of range";
+                    TextBox_SensorB.Clear();
                 }
             }
             else
@@ -387,22 +404,31 @@ namespace SatelliteDataProcessing
 
             if (!string.IsNullOrEmpty(TextBox_SensorA.Text))
             {
-                if (SearchRange(TextBox_SensorA, SensorAList) && SelectionSort(SensorAList) || InsertionSort(SensorAList))
+                //check if searchValue is within the range and data is sorted before search the search value
+                if (SearchRange(TextBox_SensorA, SensorAList))
                 {
-                    Stopwatch sw = new Stopwatch();
-                    sw.Start();
-                    int found = BinarySearchRecursive(SensorAList, int.Parse(TextBox_SensorA.Text), 0, NumberOfNodes(SensorAList));
-                    sw.Stop();
-                    long numTickes = sw.ElapsedTicks;
-                    TextBoxSsA_SearchRec.Text = numTickes.ToString() + " ticks";
-                    DisplayListboxData(SensorAList, ListBoxSensorA);
-                    HighlightItems(found, ListBoxSensorA);
-                    Button_BinSearchRecursiveA.IsEnabled = false;
+                    if (InsertionSort(SensorAList) || SelectionSort(SensorAList))
+                    {
+                        Stopwatch sw = new Stopwatch();
+                        sw.Start();
+                        int found = BinarySearchRecursive(SensorAList, int.Parse(TextBox_SensorA.Text), 0, NumberOfNodes(SensorAList));
+                        sw.Stop();
+                        long numTickes = sw.ElapsedTicks;
+                        TextBoxSsA_SearchRec.Text = numTickes.ToString() + " ticks";
+                        DisplayListboxData(SensorAList, ListBoxSensorA);
+                        HighlightItems(found, ListBoxSensorA);
+                        Button_BinSearchRecursiveA.IsEnabled = false;
+                    }
+                    else
+                    {
+                        StatusMS.Text = "Sensor A List is Unsorted";
+                    }
                 }
                 else
                 {
-                    StatusMS.Text = "Search Value is out of range or sensorAList is Unsorted";
-                }
+                    StatusMS.Text = "Search Value is out of range";
+                    TextBox_SensorA.Clear();
+                }                
             }
             else
             {
@@ -416,21 +442,30 @@ namespace SatelliteDataProcessing
             TextBoxSsB_SearchRec.Clear();
             if (!string.IsNullOrEmpty (TextBox_SensorB.Text))
             {
-                if (SearchRange(TextBox_SensorB, SensorBList) && SelectionSort(SensorBList) || InsertionSort(SensorBList))
+                //check if searchValue is within the range and data is sorted before search the search value
+                if (SearchRange(TextBox_SensorB, SensorBList))
                 {
-                    Stopwatch sw = new Stopwatch();
-                    sw.Start();
-                    int found = BinarySearchRecursive(SensorBList, int.Parse(TextBox_SensorB.Text), 0, NumberOfNodes(SensorBList));
-                    sw.Stop();
-                    long numTickes = sw.ElapsedTicks;
-                    TextBoxSsB_SearchRec.Text = numTickes.ToString() + " ticks";
-                    DisplayListboxData(SensorBList, ListBoxSensorB);
-                    HighlightItems(found, ListBoxSensorB);
-                    Button_BinSearchRecursiveB.IsEnabled = false;
+                    if (InsertionSort(SensorBList) || SelectionSort(SensorBList))
+                    {
+                        Stopwatch sw = new Stopwatch();
+                        sw.Start();
+                        int found = BinarySearchRecursive(SensorBList, int.Parse(TextBox_SensorB.Text), 0, NumberOfNodes(SensorBList));
+                        sw.Stop();
+                        long numTickes = sw.ElapsedTicks;
+                        TextBoxSsB_SearchRec.Text = numTickes.ToString() + " ticks";
+                        DisplayListboxData(SensorBList, ListBoxSensorB);
+                        HighlightItems(found, ListBoxSensorB);
+                        Button_BinSearchRecursiveB.IsEnabled = false;
+                    }
+                    else
+                    {
+                        StatusMS.Text = "Sensor B List is Unsorted";
+                    }
                 }
                 else
                 {
-                    StatusMS.Text = "Search Value is out of range or sensorBList is Unsorted";
+                    StatusMS.Text = "Search Value is out of range";
+                    TextBox_SensorB.Clear();
                 }
             }
             else
@@ -488,11 +523,11 @@ namespace SatelliteDataProcessing
         private void ButtonClickA_SelectionSort(object sender, RoutedEventArgs e)
         {
             TextBox_SelectSsA.Clear();
-            Stopwatch sw = new Stopwatch();
+            Stopwatch sw = new Stopwatch(); //stopwatch class to measure elapsed time for selection sort to see performance 
             sw.Start();
             SelectionSort(SensorAList);
             sw.Stop();
-            long ElapseMilliseconds = sw.ElapsedMilliseconds;
+            long ElapseMilliseconds = sw.ElapsedMilliseconds; 
             TextBox_SelectSsA.Text = sw.ElapsedMilliseconds.ToString() + " millisec";
             DisplayListboxData(SensorAList, ListBoxSensorA);
 
@@ -503,22 +538,24 @@ namespace SatelliteDataProcessing
         private void ButtonClickB_SelectionSort(object sender, RoutedEventArgs e)
         {
             TextBox_SelectSsB.Clear();
-            Stopwatch sw = new Stopwatch();
+            Stopwatch sw = new Stopwatch(); 
             sw.Start();
             SelectionSort(SensorBList);
             sw.Stop();
             long ElapseMilliseconds = sw.ElapsedMilliseconds;
             TextBox_SelectSsB.Text = sw.ElapsedMilliseconds.ToString() + " millisec";
             DisplayListboxData(SensorBList, ListBoxSensorB);
-            Button_SelectionSortB.IsEnabled = false;           
+
+            //Button control here(SelectionSort:Disable)
+            Button_SelectionSortB.IsEnabled = false;            
         }
 
         private void ButtonClickA_InsertionSort(object sender, RoutedEventArgs e)
         {
             TextBox_InsertSsA.Clear();
-            Stopwatch sw = new Stopwatch();
+            Stopwatch sw = new Stopwatch(); //stopwatch class to measure elapsed time for the Intersion sort to see performance 
             sw.Start();
-            InsertionSort(SensorAList);
+            InsertionSort(SensorAList); 
             sw.Stop();
             long ElapseMilliseconds = sw.ElapsedMilliseconds;
             TextBox_InsertSsA.Text = sw.ElapsedMilliseconds.ToString() + " millisec";
@@ -527,7 +564,8 @@ namespace SatelliteDataProcessing
             //Button control
             Button_InsertionSortA.IsEnabled = false;
             Button_BinSearchIterativeA.IsEnabled = true;
-            Button_BinSearchRecursiveA.IsEnabled = true;
+            Button_BinSearchRecursiveA.IsEnabled = true;   
+            TextBox_SensorA.Focus();
         }
 
         private void ButtonClickB_InsertionSort(object sender, RoutedEventArgs e)
@@ -540,10 +578,12 @@ namespace SatelliteDataProcessing
             long EllapseMilliseconds = sw.ElapsedMilliseconds;
             TextBox_InsertSsB.Text = sw.ElapsedMilliseconds.ToString() + " millisec";
             DisplayListboxData(SensorBList, ListBoxSensorB);
+
             //Button control
             Button_InsertionSortB.IsEnabled = false;
             Button_BinSearchIterativeB.IsEnabled = true;
             Button_BinSearchRecursiveB.IsEnabled = true;
+            TextBox_SensorB.Focus();
         }
         #endregion
 
@@ -560,14 +600,14 @@ namespace SatelliteDataProcessing
             {
                 ComboBoxSigma.Items.Add(i);
             }
-            ComboBoxSigma.SelectedIndex = 0; //default
+            ComboBoxSigma.SelectedIndex = 0; //default value for Sigma
 
             //Mu combobox
             for (int i = 35; i <= 75; i++)
             {
                 ComboBoxMu.Items.Add(i);
             }
-            ComboBoxMu.SelectedIndex = 15; //default
+            ComboBoxMu.SelectedIndex = 15; //default value for Mu
 
         }
 
@@ -575,7 +615,7 @@ namespace SatelliteDataProcessing
         private void TextBoxA_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
             //Regex regex = new(@"^\d+$");            
-            e.Handled = Regex.IsMatch(e.Text, "[^0-9]+$");                        
+            e.Handled = Regex.IsMatch(e.Text, "[^0-9]+$"); // only accept a numeric integer                        
         }
         private void TextBoxB_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
@@ -587,15 +627,15 @@ namespace SatelliteDataProcessing
             if(!string.IsNullOrEmpty(textbox.Text))
             {
                 int searchValue = int.Parse(textbox.Text);
-                //Check if searche value is within the range
+                //Check if searche value is within the range 
                 if (searchValue > MinValue(linkedlist) && (searchValue < MaxValue(linkedlist)))
                 {
-                    return true;
+                    return true; //if searchValue is within the range, return true.
                 }
                 else
                 {
                     textbox.Clear();
-                    return false;
+                    return false; // if search value is out of the range, return false.
                 }
             }
             else
@@ -623,8 +663,8 @@ namespace SatelliteDataProcessing
 
         //private int GetNearestValue(LinkedList<double> linkedList, int mid, int searchValue)
         //{
-                //int start = Math.Abs()
-                //end =
+                //int startIndex = Math.Abs()
+                //endIndex =
         //}
 
     }

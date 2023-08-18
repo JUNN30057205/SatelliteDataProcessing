@@ -23,14 +23,14 @@
         <ComboBox x:Name="ComboBoxMu" HorizontalAlignment="Left" Margin="121,31,0,0" VerticalAlignment="Top" Width="80"/>
         <TextBox x:Name="TextBox_SensorA" HorizontalAlignment="Left" Margin="382,28,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="95" PreviewTextInput="TextBoxA_PreviewTextInput"/>
         <TextBox x:Name="TextBox_SensorB" HorizontalAlignment="Left" Margin="663,28,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="103" PreviewTextInput="TextBoxB_PreviewTextInput"/>
-        <TextBox x:Name="TextBox_SelectSsA" HorizontalAlignment="Left" Margin="382,60,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="95" IsReadOnlyCaretVisible="True"/>
-        <TextBox x:Name="TextBox_SelectSsB" HorizontalAlignment="Left" Margin="665,60,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="103" IsReadOnlyCaretVisible="True"/>
-        <TextBox x:Name="TextBox_InsertSsA" HorizontalAlignment="Left" Margin="382,90,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="95" IsReadOnlyCaretVisible="True"/>
-        <TextBox x:Name="TextBox_InsertSsB" HorizontalAlignment="Left" Margin="665,90,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="103" IsReadOnlyCaretVisible="True"/>
-        <TextBox x:Name="TextBoxSsA_SearchIte" HorizontalAlignment="Left" Margin="382,123,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="95" IsReadOnlyCaretVisible="True"/>
-        <TextBox x:Name="TextBoxSsB_SearchIte" HorizontalAlignment="Left" Margin="665,123,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="103" IsReadOnlyCaretVisible="True"/>
-        <TextBox x:Name="TextBoxSsA_SearchRec" HorizontalAlignment="Left" Margin="382,158,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="95" IsReadOnlyCaretVisible="True"/>
-        <TextBox x:Name="TextBoxSsB_SearchRec" HorizontalAlignment="Left" Margin="665,158,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="103" IsReadOnlyCaretVisible="True"/>
+        <TextBox x:Name="TextBox_SelectSsA" HorizontalAlignment="Left" Margin="382,60,0,0" TextWrapping="Wrap" Text="Milliseconds" VerticalAlignment="Top" Width="95" IsReadOnlyCaretVisible="True"/>
+        <TextBox x:Name="TextBox_SelectSsB" HorizontalAlignment="Left" Margin="665,60,0,0" TextWrapping="Wrap" Text="Milliseconds" VerticalAlignment="Top" Width="103" IsReadOnlyCaretVisible="True"/>
+        <TextBox x:Name="TextBox_InsertSsA" HorizontalAlignment="Left" Margin="382,90,0,0" TextWrapping="Wrap" Text="Milliseconds" VerticalAlignment="Top" Width="95" IsReadOnlyCaretVisible="True"/>
+        <TextBox x:Name="TextBox_InsertSsB" HorizontalAlignment="Left" Margin="665,90,0,0" TextWrapping="Wrap" Text="Milliseconds" VerticalAlignment="Top" Width="103" IsReadOnlyCaretVisible="True"/>
+        <TextBox x:Name="TextBoxSsA_SearchIte" HorizontalAlignment="Left" Margin="382,123,0,0" TextWrapping="Wrap" Text="Ticks" VerticalAlignment="Top" Width="95" IsReadOnlyCaretVisible="True"/>
+        <TextBox x:Name="TextBoxSsB_SearchIte" HorizontalAlignment="Left" Margin="665,123,0,0" TextWrapping="Wrap" Text="Ticks" VerticalAlignment="Top" Width="103" IsReadOnlyCaretVisible="True"/>
+        <TextBox x:Name="TextBoxSsA_SearchRec" HorizontalAlignment="Left" Margin="382,158,0,0" TextWrapping="Wrap" Text="Ticks" VerticalAlignment="Top" Width="95" IsReadOnlyCaretVisible="True"/>
+        <TextBox x:Name="TextBoxSsB_SearchRec" HorizontalAlignment="Left" Margin="665,158,0,0" TextWrapping="Wrap" Text="Ticks" VerticalAlignment="Top" Width="103" IsReadOnlyCaretVisible="True"/>
         <Button x:Name="Button_Load" Content="Load Data" HorizontalAlignment="Left" Margin="121,64,0,0" VerticalAlignment="Top" Width="80" Click="ButtonClick_LoadData"/>
         <Button x:Name="Button_SelectionSortA" Content="Selection Sort" HorizontalAlignment="Left" Margin="241,58,0,0" VerticalAlignment="Top" Width="136" Click="ButtonClickA_SelectionSort" IsEnabled="False"/>
         <Button x:Name="Button_SelectionSortB" Content="Selection Sort" HorizontalAlignment="Left" Margin="530,58,0,0" VerticalAlignment="Top" Width="130" Click="ButtonClickB_SelectionSort" IsEnabled="False"/>
